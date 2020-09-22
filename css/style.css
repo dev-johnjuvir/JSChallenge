@@ -42,9 +42,9 @@ input[type=number]:focus,
 
 
 /* MAIN CONTENT */
-.wrap {
-    width: 100%;
-    padding: 20px 0;
+.wrap{
+    /* width: 100%; */
+    padding: 30px 20px;
 }
 .mainContent{
     border: 1px solid #c2c2c2;
