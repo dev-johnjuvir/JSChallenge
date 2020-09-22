@@ -17,9 +17,7 @@ $(function(){
          if($(this).text().toLowerCase().indexOf(""+text+"") != -1 ){
           $(this).closest('.content').show();
          }
-        //  else{
-        //      searchCard.hide();
-        //  }
+        
          
        });
       });
