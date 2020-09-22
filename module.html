@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <h1>Training Manual</h1>
             </a>
          
@@ -28,17 +28,15 @@
                 </div>
 
                 <div class="sidebar col-lg-4 col-md-4 col-sm-12">
-                    <input type="text" id="searchBar" class="form-control" placeholder="Search" />
+                    <!-- <input type="text" id="searchBar" class="form-control" placeholder="Search" /> -->
 
                     <div class="search-match">
-                        <!-- <a href="#" class="badge badge-light">result1</a>
-                        <a href="#" class="badge badge-light">result2</a>
-                        <a href="#" class="badge badge-light">result3</a>
-                        <a href="#" class="badge badge-light">result4</a>
-                        <a href="#" class="badge badge-light">result5</a>
-                        <a href="#" class="badge badge-light">result6</a> -->
+                       
                     </div>
                     <h4>Sections</h4>
+                    <div class="section-list list-group">
+                        
+                    </div>
                 </div>
 
                 <div class="mainContent col-lg-8 col-md-8 col-sm-12">
@@ -47,6 +45,7 @@
                     <hr>
                     <div class="moduleContent">
                        <h3 class="sectionTitle"></h3>
+                       <hr>
                        <p class="sectionContent"></p>
                     </div>
                 </div>
@@ -78,11 +77,26 @@
                 var title = data[id]['moduleName'];
                 console.log(section);
                 var initContent =data[id]['section'][0]['sectionContent'];
-
+                var initContent1 =data[id]['section'][0]['sectionTitle'];
 
                 //display values
                 $('.moduleTitle').append(title);
                 $('.sectionContent').append(initContent);
+                $('.sectionTitle').append(initContent1);
+
+                $.each(section, function(s){
+                    var data_item = '<a href="" class="section_list_item list-group-item list-group-item-action" data-value="'+ section[s]['sectionContent'] +'">'+ section[s]['sectionTitle'] +'</a>';
+                    $('.section-list').append(data_item);
+                });
+
+                $('.section_list_item').click(function(e){
+                    e.preventDefault();
+                    var value = $(this).data("value");
+                    var sectionTitle = $(this).text();
+                    $('.sectionTitle').html(sectionTitle);
+                    $('.sectionContent').html(value);
+                });
+                
             });
         });
     </script>
