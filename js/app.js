@@ -17,6 +17,7 @@ $(document).ready(function(){
       if($(this).text().toLowerCase().indexOf(""+text+"") != -1 ){
        $(this).closest('.content').show();
       }
+      
     });
    });
   });
