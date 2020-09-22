@@ -17,10 +17,7 @@
             <a class="navbar-brand" href="#">
                 <h1>Training Manual</h1>
             </a>
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
+         
         </div>
     </nav>
     <div class="wrap">
@@ -46,28 +43,11 @@
 
                 <div class="mainContent col-lg-8 col-md-8 col-sm-12">
                     <!-- Dito yung contents -->
-                    <h3 class="moduleTitle">Module Title</h3>
+                    <h3 class="moduleTitle"></h3>
                     <hr>
                     <div class="moduleContent">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae ducimus aut debitis
-                        provident, nihil quisquam quam molestias aliquid odit impedit. Exercitationem eius fuga quod
-                        nostrum doloribus veniam explicabo aliquid.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae ducimus aut debitis
-                        provident, nihil quisquam quam molestias aliquid odit impedit. Exercitationem eius fuga quod
-                        nostrum doloribus veniam explicabo aliquid.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae ducimus aut debitis
-                        provident, nihil quisquam quam molestias aliquid odit impedit. Exercitationem eius fuga quod
-                        nostrum doloribus veniam explicabo aliquid.
-                        <hr>
-                        <br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae ducimus aut debitis
-                        provident, nihil quisquam quam molestias aliquid odit impedit. Exercitationem eius fuga quod
-                        nostrum doloribus veniam explicabo aliquid.
-                        <br><br>
-
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae ducimus aut debitis
-                        provident, nihil quisquam quam molestias aliquid odit impedit. Exercitationem eius fuga quod
-                        nostrum doloribus veniam explicabo aliquid.
+                       <h3 class="sectionTitle"></h3>
+                       <p class="sectionContent"></p>
                     </div>
                 </div>
             </div>
@@ -82,6 +62,30 @@
     </script>
     <script src="modules.json"></script>
     <script src="js/app.js"></script>
+    <script>
+        $(function(){
+            $.getJSON( 'modules.json', function( data ) {
+                console.log(data);
+                //get number  on url
+                var url = window.location.href;
+                var module_id =  url.substring(url.lastIndexOf('=') + 1);
+                console.log(url);
+                console.log(module_id);
+           
+                var id = module_id-1;
+                    
+                var section = data[id]['section'];
+                var title = data[id]['moduleName'];
+                console.log(section);
+                var initContent =data[id]['section'][0]['sectionContent'];
+
+
+                //display values
+                $('.moduleTitle').append(title);
+                $('.sectionContent').append(initContent);
+            });
+        });
+    </script>
 </body>
 
 </html>

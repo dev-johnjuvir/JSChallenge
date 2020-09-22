@@ -6,7 +6,6 @@ $( function() {
   //loadModule
   loadModules();
   let searchCard = $(".content .card");
-  
 
 
   var availableTags = [
@@ -68,7 +67,7 @@ $.getJSON( 'modules.json', function( data ) {
    var modules;
     $.each(data,function(ddata){
 
-        modules = '<div class="card content"> <div class="card-body"><h5 class="card-title title">' + data[ddata]['moduleName'] + '</h5><p class="card-text"> '+ data[ddata]['section'][0]['sectionContent'] +' </p></div></div>';
+        modules = '<a href="module.html?id='+ data[ddata]['moduleID'] +'"><div class="card content"> <div class="card-body"><h5 class="card-title title">' + data[ddata]['moduleName'] + '</h5><p class="card-text"> '+ data[ddata]['section'][0]['sectionContent'] +' </p></div></div></a>';
         
         $('.search-result').append(modules);
         
