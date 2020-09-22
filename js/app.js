@@ -1,31 +1,14 @@
-$(function () {
+
+
+$( function() {
   console.log("ready;");
 
   //loadModule
   loadModules();
-
-});
-
-function loadModule(){
+  let searchCard = $(".content .card");
   
-    $.getJSON( 'modules.json', function( data ) {
-        console.log(data);
-        
-       var modules;
-        $.each(data,function(ddata){
 
-            modules = '<div class="card content"> <div class="card-body"><h5 class="card-title title">' + data[ddata]['moduleName'] + '</h5><p class="card-text"> '+ data[ddata]['section'][0]['sectionContent'] +' </p></div></div>';
-            
-            $('.search-result').append(modules);
-        });
-       
-    });
-   
-  let searchCard = $(".content.card");
-  searchCard.hide();
-});
 
-$( function() {
   var availableTags = [
     "ActionScript",
     "AppleScript",
@@ -74,11 +57,26 @@ $("#searchBar").keyup(function () {
   });
 });
 
-function loadModule() {
-  $.getJSON("modules.json", function (data) {
+
+
+
+function loadModules(){
+
+$.getJSON( 'modules.json', function( data ) {
     console.log(data);
-  });
-}
+    
+   var modules;
+    $.each(data,function(ddata){
+
+        modules = '<div class="card content"> <div class="card-body"><h5 class="card-title title">' + data[ddata]['moduleName'] + '</h5><p class="card-text"> '+ data[ddata]['section'][0]['sectionContent'] +' </p></div></div>';
+        
+        $('.search-result').append(modules);
+        
+
+    });
+    searchCard.hide();
+
+});
 
 function supportsLocalStorage() {
   try {
@@ -153,3 +151,4 @@ window.onload = function () {
     });
   }
 };
+}
