@@ -1,7 +1,10 @@
 $(function(){
     console.log("ready;");
-    let searchCard = $('.content.card');
 
+    //loadModule
+    loadModules();
+
+    let searchCard = $('.content.card');
     searchCard.hide();
     $('#searchBar').keyup(function(){
    
@@ -17,14 +20,19 @@ $(function(){
          if($(this).text().toLowerCase().indexOf(""+text+"") != -1 ){
           $(this).closest('.content').show();
          }
-        
-         
        });
-      });
+    });
+
+  
+    
 });
-// $(document).ready(function(){
-   
-//   });
+
+function loadModule(){
+    
+    $.getJSON( "modules.json", function( data ) {
+        console.log(data);
+    });
+}
 
 function supportsLocalStorage() {
     try {
@@ -58,7 +66,6 @@ if(!str || searches.indexOf(str) > -1) {
 
 function removeSearches() {
     localStorage.removeItem('recentSearches');
-
 }
 
 // Create an li, given string contents, append to the supplied ul
