@@ -85,3 +85,15 @@ a:hover {
 padding: 8px;
 margin: 0 5px;
 }
+.ui-menu, 
+.ui-widget, 
+.ui-widget-content,
+.ui-autocomplete,
+.ui-front {
+    background: #fff;
+    position: relative;
+}
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
