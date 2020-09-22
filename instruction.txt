@@ -1,0 +1,15 @@
+
+SETUP:
+> Run this on XAMPP or else jquery AJAX request will fail
+
+INDEX PAGE
+> search bar can search related title of modules.
+> if there is a hit, a card result will appear
+> click the card to navigate to the module page
+
+Module page
+> All content of the selected module is in here
+> click the section to display the content of the section of the module
+
+*disclaimer: not all spec are fulfilled. 
+* JSON is used as database* 
