@@ -8,10 +8,39 @@ $(function () {
   searchCard.hide();
 });
 
+$( function() {
+  var availableTags = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lorem",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme"
+  ];
+  $( "#searchBar" ).autocomplete({
+    source: availableTags
+  });
+} );
+
 $("#searchBar").keyup(function () {
   // Search text
   var text = $(this).val().toLowerCase();
-
   // Hide all content class element
   $(".content").hide();
 
@@ -24,7 +53,7 @@ $("#searchBar").keyup(function () {
         .indexOf("" + text + "") != -1
     ) {
       $(this).closest(".content").show();
-    }
+    } 
   });
 });
 
@@ -75,7 +104,7 @@ function appendListItem(listElement, string) {
   listElement.appendChild(listItemElement);
 }
 
-// Empty the contents of an element (ul)
+// Empty the contents of an element (a)
 function clearList(listElement) {
   listElement.innerHTML = "";
 }
