@@ -2,7 +2,7 @@ $(function(){
     console.log("ready;");
 
     //loadModule
-    loadModules();
+    loadModule();
 
     let searchCard = $('.content.card');
     searchCard.hide();
@@ -28,9 +28,14 @@ $(function(){
 });
 
 function loadModule(){
-    
     $.getJSON( "modules.json", function( data ) {
         console.log(data);
+        var sections = [];
+        // $.each(data.moduleID, function(data){
+        //   console.log(data.sectionTitle);
+        // });
+        // console.log(data);
+        console.log("the heck");
     });
 }
 
