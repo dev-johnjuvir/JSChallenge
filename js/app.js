@@ -23,20 +23,23 @@ $(function(){
        });
     });
 
-  
-    
 });
 
 function loadModule(){
-    $.getJSON( "modules.json", function( data ) {
+  
+    $.getJSON( 'modules.json', function( data ) {
         console.log(data);
-        var sections = [];
-        // $.each(data.moduleID, function(data){
-        //   console.log(data.sectionTitle);
-        // });
-        // console.log(data);
-        console.log("the heck");
+        
+       var modules;
+        $.each(data,function(ddata){
+
+            modules = '<div class="card content"> <div class="card-body"><h5 class="card-title title">' + data[ddata]['moduleName'] + '</h5><p class="card-text"> '+ data[ddata]['section'][0]['sectionContent'] +' </p></div></div>';
+            
+            $('.search-result').append(modules);
+        });
+       
     });
+   
 }
 
 function supportsLocalStorage() {
