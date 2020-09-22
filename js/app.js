@@ -3,7 +3,7 @@ $(function(){
     let searchCard = $('.content.card');
 
     searchCard.hide();
-    $('#search').keyup(function(){
+    $('#searchBar').keyup(function(){
    
         // Search text
         var text = $(this).val().toLowerCase();
@@ -12,7 +12,7 @@ $(function(){
         $('.content').hide();
      
         // Search 
-        $('.content .title').each(function(){
+        $('.content .card-title').each(function(){
       
          if($(this).text().toLowerCase().indexOf(""+text+"") != -1 ){
           $(this).closest('.content').show();
@@ -63,7 +63,9 @@ function removeSearches() {
 
 // Create an li, given string contents, append to the supplied ul
 function appendListItem(listElement, string) {
-  var listItemElement = document.createElement('LI');
+  var listItemElement = document.createElement('A');
+  listItemElement.setAttribute('href', '#');
+  listItemElement.setAttribute('class', 'badge badge-dark');
   listItemElement.innerHTML = string;
   listElement.appendChild(listItemElement);
 }
