@@ -1,5 +1,3 @@
-
-
 $( function() {
   console.log("ready;");
 
@@ -10,28 +8,10 @@ $( function() {
 
 
   var availableTags = [
-    "ActionScript",
-    "AppleScript",
-    "Asp",
-    "BASIC",
-    "C",
-    "C++",
-    "Clojure",
-    "COBOL",
-    "ColdFusion",
-    "Erlang",
-    "Fortran",
-    "Groovy",
-    "Haskell",
-    "Java",
-    "JavaScript",
+    "module",
+    "mod",
+    "mo",
     "Lorem",
-    "Perl",
-    "PHP",
-    "Python",
-    "Ruby",
-    "Scala",
-    "Scheme"
   ];
   $( "#searchBar" ).autocomplete({
     source: availableTags
