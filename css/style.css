@@ -72,3 +72,16 @@ input[type=number]:focus,
 .search-recent li {
     float: left;
 } */
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+.badge-dark {
+padding: 8px;
+margin: 0 5px;
+}

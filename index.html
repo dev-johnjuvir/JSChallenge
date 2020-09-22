@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="JS CHALLENGE" />
     <meta name="keywords" content="'dummy" />
@@ -9,50 +8,51 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <h1>Training Manual</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <a class="navbar-brand" href="#">
-                <h1>Training Manual</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            </div>
-        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+      </div>
     </nav>
     <div class="wrap">
-        <div class="container">
-            <div class="row">
-                <div class="search-row col-12">
+      <div class="container">
+        <div class="row">
+          <div class="search-row col-12">
+            <div class="search-match" id="searchForm">
+              <form>
+                <input
+                  type="text"
+                  id="searchBar"
+                  class="form-control"
+                  placeholder="Search"
+                  autocomplete="off"
+                />
+              </form>
+              <!-- <button class="button" type="submit" hidden>Search</button> -->
 
-                    <div class="search-match" id="searchForm">
-                        <form>
-                        <input type="text" id="searchBar" class="form-control" placeholder="Search" />
-                        <!-- <button class="button" type="submit" hidden>Search</button> -->
-                    </form>
-
-                        <a href="#" class="badge badge-light">result1</a>
-                        <a href="#" class="badge badge-light">result2</a>
-                        <a href="#" class="badge badge-light">result3</a>
-                        <a href="#" class="badge badge-light">result4</a>
-                        <a href="#" class="badge badge-light">result5</a>
-                        <a href="#" class="badge badge-light">result6</a>
-                    </div>
-                    <hr>
-                    <div class="search-recent" id="recentSearchList">
-                        <small>recent: </small>
-                        <a href="#"  class="badge badge-dark" ></a>
-
-                    </div>
-                </div>
-
+              <a href="#" class="badge badge-light">result1</a>
+              <a href="#" class="badge badge-light">result2</a>
+              <a href="#" class="badge badge-light">result3</a>
+              <a href="#" class="badge badge-light">result4</a>
+              <a href="#" class="badge badge-light">result5</a>
+              <a href="#" class="badge badge-light">result6</a>
             </div>
 
             <section class="search-result">
@@ -85,15 +85,68 @@
             </section>
 
 
+            <hr />
+            <div class="search-recent" id="recentSearchList">
+              <small>recent: </small>
+              <a href="#" class="badge badge-dark"></a>
+            </div>
+          </div>
         </div>
+
+        <section class="search-result">
+          <div class="card content">
+            <div class="card-body">
+              <a href="#">
+                <h5 class="card-title title">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse aliquet lectus vitae tellus pharetra dictum. Nunc
+                  ut bibendum nibh. Aliquam id lectus interdum, lacinia mi eu,
+                  feugiat nibh.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="card content">
+            <div class="card-body">
+              <a href="#">
+                <h5 class="card-title title">Suspendisse aliquet lectus</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="card content">
+            <div class="card-body">
+              <a href="#">
+                <h5 class="card-title title">Special title treatment</h5>
+                <p class="card-text">
+                  ultricies nec justo sit amet, placerat blandit lorem. Morbi
+                  ultrices mauris condimentum arcu tincidunt facilisis. Nulla
+                  condimentum non eros et cursus. Integer vel sapien nisi.
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/app.js"></script>
-
-</body>
+    
+    <!--jquery widget-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </body>
 </html>
